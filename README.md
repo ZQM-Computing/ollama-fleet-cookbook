@@ -1,5 +1,7 @@
 # ollama-fleet-patterns — Ollama Fleet Patterns for Local LLM Operations
 
+[![Validate](https://github.com/ZQM-Computing/ollama-fleet-patterns/actions/workflows/validate.yml/badge.svg)](https://github.com/ZQM-Computing/ollama-fleet-patterns/actions/workflows/validate.yml)
+
 Patterns for running **local LLMs with Ollama** as a small fleet instead of a single box: **fleet health checks**, **manifest-driven model management**, **load-spreading topologies**, VRAM budgeting, operations runbooks, and a **minimal RAG reference implementation** in dependency-light Python — generalized from production self-hosted AI infrastructure, with the private machinery left out and the transferable lessons kept.
 
 ## What's inside
