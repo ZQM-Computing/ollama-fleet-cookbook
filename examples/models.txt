@@ -1,0 +1,7 @@
+# Fleet model manifest for scripts/model_sync.sh
+# One model per line; pin explicit versions so a fleet-wide pull is a
+# deliberate, reviewable change -- not a surprise multi-GB download.
+llama3.1:8b
+qwen2.5:14b
+nomic-embed-text
+llava:13b
