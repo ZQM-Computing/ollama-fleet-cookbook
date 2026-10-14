@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 rag_minimal.py -- a minimal, dependency-light RAG reference implementation
 against a local Ollama server.
@@ -51,7 +50,10 @@ CHUNK_OVERLAP = 200
 # Text handling
 # ---------------------------------------------------------------------------
 
-def chunk_text(text: str, size: int = CHUNK_CHARS, overlap: int = CHUNK_OVERLAP) -> list[str]:
+
+def chunk_text(
+    text: str, size: int = CHUNK_CHARS, overlap: int = CHUNK_OVERLAP
+) -> list[str]:
     """Split text into overlapping, paragraph-aware chunks."""
     paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
     chunks: list[str] = []
@@ -75,6 +77,7 @@ def chunk_text(text: str, size: int = CHUNK_CHARS, overlap: int = CHUNK_OVERLAP)
 # ---------------------------------------------------------------------------
 # Embeddings: real (Ollama) and fake (self-test)
 # ---------------------------------------------------------------------------
+
 
 def embed_ollama(texts: list[str]) -> np.ndarray:
     vectors = []
@@ -114,9 +117,14 @@ def cosine_rank(query_vec: np.ndarray, matrix: np.ndarray) -> np.ndarray:
 # Commands
 # ---------------------------------------------------------------------------
 
+
 def cmd_ingest(args: argparse.Namespace, embedder) -> int:
     source = Path(args.source)
-    files = sorted(source.rglob("*.md")) + sorted(source.rglob("*.txt")) if source.is_dir() else [source]
+    files = (
+        sorted(source.rglob("*.md")) + sorted(source.rglob("*.txt"))
+        if source.is_dir()
+        else [source]
+    )
     chunks: list[str] = []
     origins: list[str] = []
     for path in files:
@@ -127,7 +135,9 @@ def cmd_ingest(args: argparse.Namespace, embedder) -> int:
         print("No text chunks found.", file=sys.stderr)
         return 1
     vectors = embedder(chunks)
-    np.savez_compressed(args.index, vectors=vectors, chunks=np.array(chunks), origins=np.array(origins))
+    np.savez_compressed(
+        args.index, vectors=vectors, chunks=np.array(chunks), origins=np.array(origins)
+    )
     print(f"Indexed {len(chunks)} chunks from {len(files)} file(s) -> {args.index}")
     return 0
 
@@ -153,7 +163,10 @@ def cmd_ask(args: argparse.Namespace, embedder) -> int:
                         "role": "system",
                         "content": "Answer using only the provided context. If the context does not contain the answer, say so plainly.",
                     },
-                    {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {args.question}"},
+                    {
+                        "role": "user",
+                        "content": f"Context:\n{context}\n\nQuestion: {args.question}",
+                    },
                 ],
             }
         ).encode(),
@@ -179,29 +192,46 @@ def self_test() -> int:
     assert vectors.shape == (len(chunks), 256)
     query = embed_fake(["how do I replace a failed OSD in ceph"])[0]
     best = int(cosine_rank(query, vectors)[0])
-    assert "OSD replacement" in chunks[best], f"ranking failed: best chunk was {chunks[best]!r}"
+    assert "OSD replacement" in chunks[best], (
+        f"ranking failed: best chunk was {chunks[best]!r}"
+    )
     # Index round-trip.
     tmp = Path("/tmp/rag_minimal_selftest.npz")
-    np.savez_compressed(tmp, vectors=vectors, chunks=np.array(chunks), origins=np.array(["t"] * len(chunks)))
+    np.savez_compressed(
+        tmp,
+        vectors=vectors,
+        chunks=np.array(chunks),
+        origins=np.array(["t"] * len(chunks)),
+    )
     back = np.load(tmp)
     assert back["vectors"].shape == vectors.shape
     tmp.unlink(missing_ok=True)
-    print(f"self-test OK: {len(chunks)} chunks, ranking picked the OSD chunk, index round-trips")
+    print(
+        f"self-test OK: {len(chunks)} chunks, ranking picked the OSD chunk, index round-trips"
+    )
     return 0
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--self-test", action="store_true", help="run the offline self-test and exit")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "--self-test", action="store_true", help="run the offline self-test and exit"
+    )
     sub = parser.add_subparsers(dest="command")
-    p_in = sub.add_parser("ingest", help="chunk + embed a file or directory into an index")
+    p_in = sub.add_parser(
+        "ingest", help="chunk + embed a file or directory into an index"
+    )
     p_in.add_argument("source")
     p_in.add_argument("--index", default="rag_index.npz")
     p_ask = sub.add_parser("ask", help="answer a question from an index")
     p_ask.add_argument("question")
     p_ask.add_argument("--index", default="rag_index.npz")
     p_ask.add_argument("-k", type=int, default=4)
-    p_ask.add_argument("--no-chat", action="store_true", help="print ranked context only")
+    p_ask.add_argument(
+        "--no-chat", action="store_true", help="print ranked context only"
+    )
     args = parser.parse_args()
 
     if args.self_test:
