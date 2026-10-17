@@ -1,9 +1,34 @@
-# Contributing
+# Contributing to ZQM Computing
 
-## Ground rules
+Thank you for your interest in contributing to ZQM Computing — geospatial patterns and tools.
 
-1. **Patterns, not deployments.** Contribute the transferable shape of a solution. Real hostnames, LAN addresses, model-store paths from a live deployment, and anything identifying a private setup stay out.
-2. **Scripts are honest about mutation.** Read-only checks must never mutate; the sync script mutates by design and says so in its header. Keep that labeling accurate.
-3. **State versions.** Ollama's behavior (memory handling, API fields, defaults) shifts between releases — note the version your contribution was verified on.
-4. **The self-test must stay green.** Changes to `python/rag_minimal.py` keep `python/rag_minimal.py --self-test` passing with no server and no network.
-5. **Measured claims.** Sizing and performance guidance should say how it was measured or be framed as a rule of thumb, not a benchmark.
+## How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add your feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+## Code Standards
+
+- Follow existing code style
+- Add tests for new features
+- Update documentation as needed
+- Keep commits atomic and descriptive
+- All repos are MIT-licensed unless otherwise noted
+
+## Reporting Issues
+
+- Use GitHub Issues for bug reports
+- Include steps to reproduce
+- Specify your environment (OS, version, etc)
+- For security vulnerabilities, see [SECURITY.md](SECURITY.md)
+
+## Questions?
+
+Open an issue or discussion in the repository.
+
+---
+
+*Part of the [ZQM Computing](https://github.com/ZQM-Computing) ecosystem — geospatial patterns and tools.*
