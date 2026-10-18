@@ -98,6 +98,14 @@ Maintained by [ZQM Computing](https://github.com/ZQM-Computing). Patterns genera
 - [proxmox-ceph-operations](https://github.com/ZQM-Computing/proxmox-ceph-operations) — Proxmox VE + Ceph operations runbooks: health checks, backup discipline, OSD replacement, upgrade checklists
 - [geospatial-patterns](https://github.com/ZQM-Computing/geospatial-patterns) — Umbrella index for all ZQM geospatial pattern repos
 
+## Installation
+
+```bash
+pip install -e .
+```
+
+Requires Python 3.11+.
+
 ## License
 
 MIT — see [`LICENSE`](LICENSE).
