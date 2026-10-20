@@ -1,14 +1,14 @@
 # ollama-fleet-patterns — Ollama Fleet Patterns for Local LLM Operations
 
 <!-- ZQM-START -->
+<!-- markdownlint-disable MD033 -->
 <p align="center">
   <strong>ZQM Labs — Z's Quests & Mischief</strong><br>
   <a href="https://zqmlabs.com">zqmlabs.com</a> •
   <a href="https://github.com/ZQM-Labs">GitHub</a>
 </p>
+<!-- markdownlint-enable MD033 -->
 <!-- ZQM-END -->
-
-
 
 [![Validate](https://github.com/ZQM-Computing/ollama-fleet-patterns/actions/workflows/validate.yml/badge.svg)](https://github.com/ZQM-Computing/ollama-fleet-patterns/actions/workflows/validate.yml)
 
@@ -124,8 +124,8 @@ MIT — see [`LICENSE`](LICENSE).
 
 *Part of [ZQM Labs](https://github.com/ZQM-Labs) — games, gear & a little mischief.*
 
-
 <!-- ZQM-FOOTER-START -->
+<!-- markdownlint-disable MD033 -->
 ---
 
 <p align="center">
@@ -134,4 +134,5 @@ MIT — see [`LICENSE`](LICENSE).
   <a href="https://github.com/ZQM-Labs">ZQM Labs</a> •
   <a href="https://github.com/ZQM-Computing">ZQM Computing</a>
 </p>
+<!-- markdownlint-enable MD033 -->
 <!-- ZQM-FOOTER-END -->
