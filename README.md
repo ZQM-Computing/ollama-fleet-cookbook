@@ -3,9 +3,9 @@
 <!-- ZQM-START -->
 <!-- markdownlint-disable MD033 -->
 <p align="center">
-  <strong>ZQM Labs — Z's Quests & Mischief</strong><br>
-  <a href="https://zqmlabs.com">zqmlabs.com</a> •
-  <a href="https://github.com/ZQM-Labs">GitHub</a>
+  <strong>ZQM Computing — Geospatial Engineering & Scientific Computing</strong><br>
+  <a href="https://github.com/ZQM-Computing">ZQM Computing</a> •
+  <a href="https://github.com/ZQM-Labs">ZQM Labs</a>
 </p>
 <!-- markdownlint-enable MD033 -->
 <!-- ZQM-END -->
@@ -87,7 +87,7 @@ Fleet scars welcome: failure modes, version-specific behaviors, topology lessons
 
 Maintained by [ZQM Computing](https://github.com/ZQM-Computing). Patterns generalized from operating a self-hosted Ollama fleet and local-AI tooling in production by Alex Zelenski, GISP.
 
-## More from this series
+## Related repositories
 
 - [postgis-patterns](https://github.com/ZQM-Computing/postgis-patterns) — Production PostGIS patterns: spatial indexing, joins & KNN, SRID management, vector tiles, data quality, partitioning
 - [duckdb-spatial-patterns](https://github.com/ZQM-Computing/duckdb-spatial-patterns) — DuckDB Spatial patterns for analytical geospatial SQL: GeoParquet, spatial joins, KNN, H3 aggregation — no server required
@@ -107,7 +107,7 @@ Maintained by [ZQM Computing](https://github.com/ZQM-Computing). Patterns genera
 ## Installation
 
 ```bash
-pip install -e .
+pip install -r requirements.txt
 ```
 
 Requires Python 3.11+.
@@ -116,19 +116,7 @@ Requires Python 3.11+.
 
 MIT — see [`LICENSE`](LICENSE).
 
-## Related repositories
-
-- [geospatial-patterns](https://github.com/ZQM-Computing/geospatial-patterns) — umbrella index of all geospatial pattern repos
-- [gdal-patterns](https://github.com/ZQM-Computing/gdal-patterns) — GDAL/OGR CLI patterns for raster/vector conversion
-- [geopandas-patterns](https://github.com/ZQM-Computing/geopandas-patterns) — GeoPandas/Shapely patterns for Python geospatial workflows
-- [pgrouting-patterns](https://github.com/ZQM-Computing/pgrouting-patterns) — pgRouting patterns for PostGIS network analysis
-- [stac-patterns](https://github.com/ZQM-Computing/stac-patterns) — STAC patterns for geospatial data discovery
-- [cog-patterns](https://github.com/ZQM-Computing/cog-patterns) — Cloud Optimized GeoTIFF patterns
-- [maplibre-patterns](https://github.com/ZQM-Computing/maplibre-patterns) — MapLibre GL JS patterns for frontend vector tiles
-- [geoparquet-patterns](https://github.com/ZQM-Computing/geoparquet-patterns) — GeoParquet patterns for columnar analytics
-- [h3-patterns](https://github.com/ZQM-Computing/h3-patterns) — H3 hexagonal grid patterns
-
-*Part of [ZQM Labs](https://github.com/ZQM-Labs) — games, gear & a little mischief.*
+*Part of [ZQM Computing](https://github.com/ZQM-Computing) — geospatial engineering, scientific computing, and infrastructure patterns.*
 
 <!-- ZQM-FOOTER-START -->
 <!-- markdownlint-disable MD033 -->
