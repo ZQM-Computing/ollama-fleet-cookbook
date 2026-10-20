@@ -51,6 +51,12 @@ python python/rag_minimal.py ask "How do I replace an OSD?" --index fleet_docs.n
 python python/rag_minimal.py --self-test
 ```
 
+## Usage
+
+Start with the [Quick start](#quick-start) to bring up a node, then apply
+the configurations and patterns here to grow and operate the fleet —
+adapt the hostnames, models, and service settings to your own hardware.
+
 ## Who this is for
 
 Developers and homelab/infrastructure folks who have Ollama running on one machine and are hitting the next set of questions — a second GPU box, teammates as users, models drifting between hosts, a RAG prototype that needs to become a habit. Also teams evaluating local inference for privacy or cost reasons who want the operational shape before committing hardware.
