@@ -14,6 +14,16 @@
 
 Patterns for running **local LLMs with Ollama** as a small fleet instead of a single box: **fleet health checks**, **manifest-driven model management**, **load-spreading topologies**, VRAM budgeting, operations runbooks, and a **minimal RAG reference implementation** in dependency-light Python — generalized from production self-hosted AI infrastructure, with the private machinery left out and the transferable lessons kept.
 
+## Repository role and status
+
+**Status:** Active, public.
+
+**What this repository is:** Ollama fleet operations patterns — manifest-driven model management, fleet health checks, load-spreading topologies, VRAM budgeting, operations runbooks, and a minimal RAG reference implementation, generalized from production self-hosted operations. This is a pattern library, not the live fleet's configuration.
+
+**What it contributes:** Part of the ZQM Computing public geospatial portfolio — production-grade pattern and reference repositories that document geospatial engineering practice across the stack. This repository is the reusable pattern library for its layer: working code and runbooks that practitioners can lift into their own pipelines, and portfolio evidence of the engineering practice behind ZQM Computing. The umbrella index for the series is [geospatial-patterns](https://github.com/ZQM-Computing/geospatial-patterns).
+
+**Standing:** The portfolio program was completed and Tier-1 hardened on 2026-10-15, with prose CI enforced as required status checks. This repository is standalone — no other repository or deployment depends on it.
+
 ## What's inside
 
 **Scripts** ([`scripts/`](scripts/))
