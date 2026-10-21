@@ -33,6 +33,7 @@ import hashlib
 import json
 import os
 import sys
+import tempfile
 import urllib.request
 from pathlib import Path
 
@@ -195,17 +196,18 @@ def self_test() -> int:
     assert "OSD replacement" in chunks[best], (
         f"ranking failed: best chunk was {chunks[best]!r}"
     )
-    # Index round-trip.
-    tmp = Path("/tmp/rag_minimal_selftest.npz")
-    np.savez_compressed(
-        tmp,
-        vectors=vectors,
-        chunks=np.array(chunks),
-        origins=np.array(["t"] * len(chunks)),
-    )
-    back = np.load(tmp)
-    assert back["vectors"].shape == vectors.shape
-    tmp.unlink(missing_ok=True)
+    # Index round-trip. Use a temporary directory so the check works on any
+    # platform (no hardcoded /tmp) and the handle is released before cleanup.
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmp = Path(tmpdir) / "rag_minimal_selftest.npz"
+        np.savez_compressed(
+            tmp,
+            vectors=vectors,
+            chunks=np.array(chunks),
+            origins=np.array(["t"] * len(chunks)),
+        )
+        with np.load(tmp, allow_pickle=False) as back:
+            assert back["vectors"].shape == vectors.shape
     print(
         f"self-test OK: {len(chunks)} chunks, ranking picked the OSD chunk, index round-trips"
     )
