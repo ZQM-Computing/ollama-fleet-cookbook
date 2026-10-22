@@ -39,12 +39,12 @@ jobs:
           done
           if [ -f pyproject.toml ]; then
             python - <<'PY'
-            import tomllib
-            from pathlib import Path
-            data = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
-            deps = data.get("project", {}).get("dependencies", [])
-            Path("/tmp/zqm-pyproject-requirements.txt").write_text("\n".join(deps) + ("\n" if deps else ""), encoding="utf-8")
-            PY
+          import tomllib
+          from pathlib import Path
+          data = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
+          deps = data.get("project", {}).get("dependencies", [])
+          Path("/tmp/zqm-pyproject-requirements.txt").write_text("\n".join(deps) + ("\n" if deps else ""), encoding="utf-8")
+          PY
             if [ -s /tmp/zqm-pyproject-requirements.txt ]; then
               found=1
               python -m pip install --disable-pip-version-check pip-audit
