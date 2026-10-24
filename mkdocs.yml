@@ -1,0 +1,33 @@
+site_name: Ollama Fleet Cookbook
+site_description: Ollama fleet operations cookbook — model management, health checks, VRAM budgeting, RAG reference
+site_author: ZQM Computing
+repo_url: https://github.com/ZQM-Computing/ollama-fleet-cookbook
+
+# Adapted from the sibling cookbook mkdocs.yml pattern (geopandas-cookbook,
+# verified live). Two deliberate departures, both because the target repo
+# lacks the corresponding thing: no site_url (no ollama docs subdomain was
+# verified for this repo — do not invent one here) and no custom_dir
+# (docs/overrides does not exist in this repo; docs/ holds only the four
+# pages listed in nav below). Nav lists all pages: with an explicit nav,
+# MkDocs only builds listed pages, so a Home-only nav would hide the
+# four existing docs pages.
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Fleet topology: fleet-topology.md
+  - Model management: model-management.md
+  - RAG architecture: rag-architecture.md
+  - Operations: operations.md
