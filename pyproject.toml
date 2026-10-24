@@ -1,0 +1,22 @@
+[project]
+name = "ollama-fleet-cookbook"
+version = "0.1.0"
+description = "Ollama fleet operations cookbook — model management, health checks, VRAM budgeting, RAG reference"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "ZQM Computing", email = "zqmcomputing@gmail.com"}]
+keywords = ["ollama", "fleet-management", "llm", "rag", "python", "geospatial"]
+dependencies = [
+    "numpy>=2.5.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/ZQM-Computing/ollama-fleet-cookbook"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
