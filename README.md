@@ -12,7 +12,7 @@
 
 [![Validate](https://github.com/ZQM-Computing/ollama-fleet-cookbook/actions/workflows/validate.yml/badge.svg)](https://github.com/ZQM-Computing/ollama-fleet-cookbook/actions/workflows/validate.yml)
 
-Patterns for running **local LLMs with Ollama** as a small fleet instead of a single box: **fleet health checks**, **manifest-driven model management**, **load-spreading topologies**, VRAM budgeting, operations runbooks, and a **minimal RAG reference implementation** in dependency-light Python — generalized from production self-hosted AI infrastructure, with the private machinery left out and the transferable lessons kept.
+A cookbook for **self-hosted local language models with Ollama**, from a single machine to a small multi-node fleet. It covers fleet health checks, manifest-driven model management, request distribution, VRAM budgeting, operational runbooks, and a minimal retrieval-augmented generation (RAG) reference in dependency-light Python. These are reusable patterns, not the live fleet's configuration; verify model licenses, hardware capacity, network exposure, and authentication before deployment.
 
 ## Repository role and status
 
