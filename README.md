@@ -40,7 +40,7 @@ A complete RAG pipeline in one file — paragraph-aware chunking, embeddings via
 **Docs** ([`docs/`](docs/))
 
 | Doc | Covers |
-|---|---|
+| --- | --- |
 | [Fleet topology](docs/fleet-topology.md) | One node done well → uniform fleet behind a proxy → role-shaped fleets; the model-locality and cold-start caveats; VRAM budgeting |
 | [Model management](docs/model-management.md) | Manifests as source of truth, pinned tags, digest discipline, deliberate upgrades, disk hygiene |
 | [RAG architecture](docs/rag-architecture.md) | When the file-simple design is right, the graduation ladder (sqlite-vec → pgvector → vector DB), chunking and grounding discipline |
