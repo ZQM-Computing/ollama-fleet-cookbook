@@ -29,7 +29,7 @@ A cookbook for **self-hosted local language models with Ollama**, from a single 
 **Scripts** ([`scripts/`](scripts/))
 
 | Script | What it does |
-|---|---|
+| --- | --- |
 | `fleet_health.sh` | Per-host API check (`/api/tags`, `/api/ps`): installed vs. loaded models; exits nonzero if any host is down |
 | `model_sync.sh` | Converges every host to a model manifest (pinned names in [`examples/models.txt`](examples/models.txt)) via the Ollama pull API |
 
@@ -40,7 +40,7 @@ A complete RAG pipeline in one file — paragraph-aware chunking, embeddings via
 **Docs** ([`docs/`](docs/))
 
 | Doc | Covers |
-|---|---|
+| --- | --- |
 | [Fleet topology](docs/fleet-topology.md) | One node done well → uniform fleet behind a proxy → role-shaped fleets; the model-locality and cold-start caveats; VRAM budgeting |
 | [Model management](docs/model-management.md) | Manifests as source of truth, pinned tags, digest discipline, deliberate upgrades, disk hygiene |
 | [RAG architecture](docs/rag-architecture.md) | When the file-simple design is right, the graduation ladder (sqlite-vec → pgvector → vector DB), chunking and grounding discipline |

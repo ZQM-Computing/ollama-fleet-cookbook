@@ -11,7 +11,7 @@ The reference implementation in [`python/rag_minimal.py`](../python/rag_minimal.
 ## The graduation ladder
 
 | Pressure you can measure | Move |
-|---|---|
+| --- | --- |
 | Index file takes > a few seconds to load / RAM pinches | sqlite-vec in a single file DB — same operational shape, real indexing |
 | Multiple services must query/update concurrently | pgvector on the Postgres you already run, or a dedicated vector DB (Qdrant/Chroma) |
 | Recall quality disappoints on real questions | Before touching infrastructure: better chunking (structure-aware), a stronger embedding model, hybrid BM25 + vector ranking, reranking. Infrastructure is rarely the recall problem. |
