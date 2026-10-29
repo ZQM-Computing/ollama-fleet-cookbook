@@ -9,7 +9,7 @@
 ## Common failures and first moves
 
 | Symptom | First move |
-|---|---|
+| --- | --- |
 | Requests hang, no error | Check VRAM: a load OOM often presents as a stall. `nvidia-smi` (or the host's GPU tool), then Ollama's logs, then reduce `OLLAMA_NUM_PARALLEL` |
 | Model answers garbage after weeks of fine service | Verify the digest (`/api/tags`) — a well-meaning pull may have replaced your pinned model. Re-pull the pinned tag. |
 | One host slow, fleet "fine" | Cold model + round-robin: the slow host is loading on the request path. Warm it (`keep_alive`) or align manifests |

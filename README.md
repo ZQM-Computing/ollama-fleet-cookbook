@@ -29,7 +29,7 @@ A cookbook for **self-hosted local language models with Ollama**, from a single 
 **Scripts** ([`scripts/`](scripts/))
 
 | Script | What it does |
-|---|---|
+| --- | --- |
 | `fleet_health.sh` | Per-host API check (`/api/tags`, `/api/ps`): installed vs. loaded models; exits nonzero if any host is down |
 | `model_sync.sh` | Converges every host to a model manifest (pinned names in [`examples/models.txt`](examples/models.txt)) via the Ollama pull API |
 
