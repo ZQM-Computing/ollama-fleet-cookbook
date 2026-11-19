@@ -127,16 +127,3 @@ Requires Python 3.11+.
 MIT — see [`LICENSE`](LICENSE).
 
 *Part of [ZQM Computing](https://github.com/ZQM-Computing) — geospatial engineering, scientific computing, and infrastructure patterns; the geospatial arm of [ZQM Labs](https://zqmlabs.com), makers of Z's Quests & Mischief location games.*
-
-<!-- ZQM-FOOTER-START -->
-<!-- markdownlint-disable MD033 -->
----
-
-<p align="center">
-  <em>Play more. Plan less.</em><br>
-  <a href="https://zqmlabs.com">zqmlabs.com</a> •
-  <a href="https://github.com/ZQM-Labs">ZQM Labs</a> •
-  <a href="https://github.com/ZQM-Computing">ZQM Computing</a>
-</p>
-<!-- markdownlint-enable MD033 -->
-<!-- ZQM-FOOTER-END -->
