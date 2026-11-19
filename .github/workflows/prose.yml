@@ -35,6 +35,13 @@ jobs:
         with:
           args: --offline --no-progress --verbose '**/*.md'
 
+  external-links:
+    name: External link check (advisory)
+    runs-on: [self-hosted, Linux, X64, zqm-linux]
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Check external links (advisory)
         continue-on-error: true
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
