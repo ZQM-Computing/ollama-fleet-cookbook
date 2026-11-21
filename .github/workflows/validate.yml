@@ -10,6 +10,7 @@ permissions:
 jobs:
   validate:
     runs-on: [self-hosted, Linux, X64, zqm-linux]
+    timeout-minutes: 30
     defaults:
       run:
         shell: bash
